@@ -23,6 +23,8 @@ gem 'devise', '~> 3.4.1'
 # Use Puma as the app server
 gem 'puma'
 
+gem 'faker'
+
 group :production do
   gem 'pg'
 
