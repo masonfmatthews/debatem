@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root 'proposals#index'
+
+  resources :proposals, only: [:index, :show, :new, :create] do
+    resources :positions, only: [:show, :new, :create]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
