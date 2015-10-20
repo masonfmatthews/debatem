@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020151410) do
+ActiveRecord::Schema.define(version: 20151020162614) do
+
+  create_table "indices", force: :cascade do |t|
+  end
 
   create_table "positions", force: :cascade do |t|
     t.integer  "user_id"
@@ -27,6 +30,10 @@ ActiveRecord::Schema.define(version: 20151020151410) do
     t.datetime "updated_at",              null: false
   end
 
+  add_index "positions", ["parent_id"], name: "index_positions_on_parent_id"
+  add_index "positions", ["proposal_id"], name: "index_positions_on_proposal_id"
+  add_index "positions", ["user_id"], name: "index_positions_on_user_id"
+
   create_table "proposals", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"
@@ -34,6 +41,8 @@ ActiveRecord::Schema.define(version: 20151020151410) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "proposals", ["user_id"], name: "index_proposals_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

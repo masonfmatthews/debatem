@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :proposals
   has_many :positions
+
+  validates :name, presence: true
+  
 end
