@@ -4,4 +4,6 @@ class Proposal < ActiveRecord::Base
 
   validates :user, presence: true
   validates :title, presence: true
+
+  delegate :name, to: :user, prefix: "user"
 end

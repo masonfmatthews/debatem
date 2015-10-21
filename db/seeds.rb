@@ -16,9 +16,10 @@ users = []
 end
 
 proposals = []
+prefixes = ["I think we should ", "This company needs to ", "It would be best to ", "We definitely should not "]
 10.times do
   proposals << Proposal.create!(user: users.sample,
-      title: Faker::Company.bs,
+      title: prefixes.sample + Faker::Company.bs,
       body: Faker::Lorem.paragraph)
 end
 

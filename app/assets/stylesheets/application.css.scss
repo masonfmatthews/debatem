@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.proposal {
+  border: 1px solid lightgrey;
+  font-weight: 200;
+  margin: 10px 0px;
+  padding: 10px;
+  h3 {
+    margin-top: 0px;
+  }
+}
