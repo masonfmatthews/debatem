@@ -17,9 +17,9 @@
 //= require_tree .
 
 function generateHalfDonuts() {
-  var width = 150,
+  var width = 200,
       height = 150,
-      radius = Math.min(width, height) / 2;
+      radius = 100;
 
   var arc = d3.svg.arc()
       .outerRadius(radius - 10)
@@ -35,7 +35,7 @@ function generateHalfDonuts() {
       .attr("width", width)
       .attr("height", height)
     .append("g")
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+      .attr("transform", "translate(" + width / 2 + "," + width / 2 + ")");
 
   var jsonData = [{name: "Yes", percentage: 40}, {name: "No", percentage: 60}];
 
@@ -46,13 +46,14 @@ function generateHalfDonuts() {
 
   g.append("path")
       .attr("d", arc)
-      .style("fill", function(d) { return d.data.name=="Yes" ? "green" : "red"; });
+      .style("fill", function(d) { return d.data.name=="Yes" ? "#3c763d" : "#a94442"; });
 
-  g.append("text")
-      .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+  svg.append("text")
+      .attr("class", "overall-percentage")
       .attr("dy", ".35em")
+      .attr("y", "-10px")
       .style("text-anchor", "middle")
-      .text(function(d) { return d.data.name; });
+      .text("40%");
 }
 
 $(generateHalfDonuts);
