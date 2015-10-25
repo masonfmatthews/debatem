@@ -1,4 +1,14 @@
 <div class="proposal">
-  <h3><%= proposal.title %></h3>
-  <p class="info">Submitted by <%= proposal.user_name %></p>
+  <div class="row">
+    <div class="col-md-9">
+      <h3><%= proposal.title %></h3>
+      <blockquote>
+        <p><%= proposal.body %></p>
+        <footer><%= proposal.user_name %></footer>
+      </blockquote>
+    </div>
+    <div class="col-md-3">
+      d3 Stuff
+    </div>
+  </div>
 </div>
