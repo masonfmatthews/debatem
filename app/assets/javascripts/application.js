@@ -31,29 +31,30 @@ function generateHalfDonuts() {
       .endAngle(1.25*Math.PI/2)
       .value(function(d) { return d.percentage; });
 
+  var jsonData = [40, 50, 70, 100]
+
   var svg = d3.selectAll("svg.half-donut")
       .attr("width", width)
       .attr("height", height)
+      .data(jsonData)
     .append("g")
       .attr("transform", "translate(" + width / 2 + "," + width / 2 + ")");
 
-  var jsonData = [{name: "Yes", percentage: 40}, {name: "No", percentage: 60}];
-
   var g = svg.selectAll(".arc")
-      .data(pie(jsonData))
+      .data(function(d) {return pie([{percentage: d}, {percentage: 100-d}]);})
     .enter().append("g")
       .attr("class", "arc");
 
   g.append("path")
       .attr("d", arc)
-      .style("fill", function(d) { return d.data.name=="Yes" ? "#3c763d" : "#a94442"; });
+      .style("fill", function(d, i) { return i==0 ? "#3c763d" : "#a94442"; });
 
   svg.append("text")
       .attr("class", "overall-percentage")
       .attr("dy", ".35em")
       .attr("y", "-10px")
       .style("text-anchor", "middle")
-      .text("40%");
+      .text(function(d) {return "" + d + "%"});
 }
 
 $(generateHalfDonuts);
