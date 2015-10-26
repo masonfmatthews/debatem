@@ -6,4 +6,8 @@ class Proposal < ActiveRecord::Base
   validates :title, presence: true
 
   delegate :name, to: :user, prefix: "user"
+
+  def percentage_agreement
+    100.0 * positions.where(agree_with_proposal: true).count / positions.count
+  end
 end

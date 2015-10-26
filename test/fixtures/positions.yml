@@ -16,7 +16,7 @@ two:
   parent: :one
   title: MyString
   body: MyText
-  agree: false
-  agree_with_proposal: false
+  agree: true
+  agree_with_proposal: true
   response_percent_agreed: 1.5
   response_count: 1
