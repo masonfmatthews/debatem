@@ -1,7 +1,17 @@
 <div class="detail-box position">
   <div class="row">
     <div class="col-md-9">
-      <h3><%= position.title %></h3>
+      <% if position.agree %>
+        <h3 class="text-success">
+          <i class="glyphicon glyphicon-thumbs-up"></i>
+          <%= position.title %>
+        </h3>
+      <% else %>
+        <h3 class="text-danger">
+          <i class="glyphicon glyphicon-thumbs-down"></i>
+          <%= position.title %>
+        </h3>
+      <% end %>
       <blockquote>
         <p><%= position.body %></p>
         <footer><%= position.user_name %></footer>
