@@ -1,7 +1,7 @@
 <h1>All Proposals</h1>
 
-<script>
-  var allPercentages = [];
-</script>
-
 <%= render @proposals %>
+
+<script>
+  var allPercentages = [<%= @proposals.map{|p| p.percentage_agreement.round}.join(", ") %>];
+</script>

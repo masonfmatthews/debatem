@@ -8,4 +8,6 @@ class Position < ActiveRecord::Base
   validates :proposal, presence: true
   validates :title, presence: true
   validates :body, presence: true
+
+  delegate :name, to: :user, prefix: "user"
 end

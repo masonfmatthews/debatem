@@ -1,19 +1,19 @@
-<div class="detail-box">
+<div class="detail-box position">
   <div class="row">
     <div class="col-md-9">
-      <h3><%= proposal.title %></h3>
+      <h3><%= position.title %></h3>
       <blockquote>
-        <p><%= proposal.body %></p>
-        <footer><%= proposal.user_name %></footer>
+        <p><%= position.body %></p>
+        <footer><%= position.user_name %></footer>
       </blockquote>
       <p>
         <a class="wide-link text-success"><i class="glyphicon glyphicon-thumbs-up"></i> Write Agreement</a>
         <a class="wide-link text-danger"><i class="glyphicon glyphicon-thumbs-down"></i> Write Disagreement</a>
-        <%= link_to '<i class="glyphicon glyphicon-eye-open"></i> View Arguments'.html_safe, proposal, class: "wide-link" %>
+        <%= link_to '<i class="glyphicon glyphicon-eye-open"></i> View Sub-arguments'.html_safe, [position.proposal, position], class: "wide-link" %>
       </p>
     </div>
     <div class="col-md-3">
-      <svg class="half-donut"></svg>
+      Other Stuffs!
     </div>
   </div>
 </div>

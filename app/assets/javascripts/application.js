@@ -34,7 +34,7 @@ function generateHalfDonuts() {
   var svg = d3.selectAll("svg.half-donut")
       .attr("width", width)
       .attr("height", height)
-      .data(allPercentages)
+      .data(allPercentages) //NOTE: This is defined in the Ruby proposals/index view
     .append("g")
       .attr("transform", "translate(" + width / 2 + "," + width / 2 + ")");
 

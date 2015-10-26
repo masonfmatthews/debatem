@@ -15,7 +15,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.proposal {
+.detail-box {
   border: 1px solid lightgrey;
   font-weight: 200;
   margin: 10px 0px;
@@ -25,6 +25,13 @@
   }
   blockquote {
     margin-bottom: 10px;
+  }
+  &.proposal-tree {
+    background-color: lightgrey;
+  }
+
+  &.position {
+    margin-left: 40px;
   }
 }
 
