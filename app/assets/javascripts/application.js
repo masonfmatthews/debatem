@@ -31,12 +31,10 @@ function generateHalfDonuts() {
       .endAngle(1.25*Math.PI/2)
       .value(function(d) { return d.percentage; });
 
-  var jsonData = [40, 50, 70, 100]
-
   var svg = d3.selectAll("svg.half-donut")
       .attr("width", width)
       .attr("height", height)
-      .data(jsonData)
+      .data(allPercentages)
     .append("g")
       .attr("transform", "translate(" + width / 2 + "," + width / 2 + ")");
 
