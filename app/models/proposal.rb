@@ -12,6 +12,10 @@ class Proposal < ActiveRecord::Base
   delegate :name, to: :user, prefix: "user"
 
   def percentage_agreement
-    100.0 * positions.where(agree_with_proposal: true).count / positions.count
+    if positions.count > 0
+      100.0 * positions.where(agree_with_proposal: true).count / positions.count
+    else
+      0
+    end
   end
 end

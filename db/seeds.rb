@@ -9,22 +9,22 @@
 User.create!(name: "Admin", email: "admin@example.com", password: "password")
 
 users = []
-10.times do
+3.times do
   users << User.create!(name: Faker::Name.name,
       email: Faker::Internet.email,
       password: Faker::Internet.password)
 end
 
 proposals = []
-prefixes = ["I think we should ", "This company needs to ", "It would be best to ", "We definitely should not "]
-10.times do
+prefixes = ["I think we should ", "This company needs to ", "It would be best to "]
+5.times do
   proposals << Proposal.create!(user: users.sample,
       title: prefixes.sample + Faker::Company.bs,
       body: Faker::Lorem.paragraph)
 end
 
 positions = []
-1000.times do |i|
+500.times do |i|
   parent = (i % 10 == 0 ? nil : positions.sample)
   parent_agree = (parent ? parent.agree_with_proposal : true)
   agree = [true, false].sample
@@ -33,7 +33,7 @@ positions = []
   positions << Position.create!(user: users.sample,
       parent: parent,
       proposal_id: proposal_id,
-      title: Faker::Company.bs,
+      title: (agree ? "Right. " : "No. ") + Faker::Company.bs.capitalize,
       body: Faker::Lorem.paragraph,
       agree: agree,
       agree_with_proposal: agree_with_proposal)
