@@ -33,7 +33,11 @@
   margin-right: 30px;
 }
 
-.overall-percentage {
+text.overall-percentage {
   font-weight: 100;
   font-size: 50px;
+}
+
+.arc path {
+  stroke: #fff;
 }
