@@ -26,11 +26,17 @@
   blockquote {
     margin-bottom: 10px;
   }
+
+  &.proposal {
+    cursor: pointer;
+  }
+
   &.proposal-tree {
     background-color: lightgrey;
   }
 
   &.position {
+    cursor: pointer;
     margin-left: 40px;
   }
 }
