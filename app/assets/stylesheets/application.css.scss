@@ -54,3 +54,10 @@ text.overall-percentage {
 .arc path {
   stroke: #fff;
 }
+
+.center {
+  text-align: center;
+  .lead {
+    margin-bottom: 0px;
+  }
+}

@@ -17,13 +17,18 @@
         <footer><%= position.user_name %></footer>
       </blockquote>
       <p>
-        <a class="wide-link text-success"><i class="glyphicon glyphicon-thumbs-up"></i> Write Agreement</a>
-        <a class="wide-link text-danger"><i class="glyphicon glyphicon-thumbs-down"></i> Write Disagreement</a>
         <%= link_to '<i class="glyphicon glyphicon-eye-open"></i> View Sub-arguments'.html_safe, [position.proposal, position], class: "wide-link" %>
       </p>
     </div>
-    <div class="col-md-3">
-      Other Stuffs!
+    <div class="col-md-3 center">
+      <div>
+        <div class="lead">+12</div>
+        <a class="text-success">Write Agreement</a>
+      </div>
+      <div>
+        <div class="lead">-5</div>
+        <a class="text-danger"></i> Write Disagreement</a>
+      </div>
     </div>
   </div>
 </div>
