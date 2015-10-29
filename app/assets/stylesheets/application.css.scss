@@ -55,9 +55,12 @@ text.overall-percentage {
   stroke: #fff;
 }
 
-.center {
+.side {
   text-align: center;
-  .lead {
-    margin-bottom: 0px;
+  .side-count {
+    margin-top: 15px;
+    .lead {
+      margin-bottom: 0px;
+    }
   }
 }

@@ -10,4 +10,13 @@ class Position < ActiveRecord::Base
   validates :body, presence: true
 
   delegate :name, to: :user, prefix: "user"
+
+  def agreements
+    responses.where(agree: true)
+  end
+
+  def disagreements
+    responses.where(agree: false)
+  end
+
 end

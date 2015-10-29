@@ -1,4 +1,4 @@
-<div class="detail-box position">
+<div class="detail-box position" onclick="location.href='<%= proposal_position_path(position.proposal, position) %>';">
   <div class="row">
     <div class="col-md-9">
       <% if position.agree %>
@@ -20,14 +20,14 @@
         <%= link_to '<i class="glyphicon glyphicon-eye-open"></i> View Sub-arguments'.html_safe, [position.proposal, position], class: "wide-link" %>
       </p>
     </div>
-    <div class="col-md-3 center">
-      <div>
-        <div class="lead">+12</div>
-        <a class="text-success">Write Agreement</a>
+    <div class="col-md-3 side">
+      <div class="side-count">
+        <div class="lead">+<%= position.agreements.count %> agree</div>
+        <a>Write an Agreement</a>
       </div>
-      <div>
-        <div class="lead">-5</div>
-        <a class="text-danger"></i> Write Disagreement</a>
+      <div class="side-count">
+        <div class="lead">-<%= position.disagreements.count %> disagree</div>
+        <a>Write a Disagreement</a>
       </div>
     </div>
   </div>
