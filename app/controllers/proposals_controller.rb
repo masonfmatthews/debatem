@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
   def index
-    @proposals = Proposal.order(created_at: :desc)
+    @proposals = Proposal.all
   end
 
   def show
@@ -14,7 +14,7 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(proposal_params)
     if @proposal.save
-      redirect_to proposals_path, notice: "Proposal saved."
+      redirect_to proposals_path, notice: "Your proposal has been saved."
     else
       render "new"
     end

@@ -13,6 +13,12 @@ class Position < ActiveRecord::Base
 
   before_save :set_proposal_agreement
 
+  default_scope -> {order(created_at: :desc)}
+
+  def subject
+    parent ? parent : proposal
+  end
+
   def agreements
     responses.where(agree: true)
   end

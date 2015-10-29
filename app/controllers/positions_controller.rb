@@ -12,7 +12,11 @@ class PositionsController < ApplicationController
   def create
     @position = Position.new(position_params)
     if @position.save
-      redirect_to proposal_position_path(@position.proposal, @position), notice: "Position saved."
+      if @position.parent
+        redirect_to proposal_position_path(@position.proposal, @position.parent), notice: "Your response has been saved."
+      else
+        redirect_to @position.proposal, notice: "Your response has been saved."
+      end
     else
       render "new"
     end

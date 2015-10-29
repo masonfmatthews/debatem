@@ -4,6 +4,17 @@
 
 <h1>New Proposal</h1>
 
+<% if @proposal.errors.any? %>
+  <div class="alert alert-danger">
+    <p><%= pluralize(@proposal.errors.count, "error") %> prohibited this record from being saved:</p>
+    <ul>
+      <% @proposal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @proposal do |f| %>
   <div class="form-group">
     <%= f.label :user_id %>

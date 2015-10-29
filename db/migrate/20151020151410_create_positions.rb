@@ -8,8 +8,6 @@ class CreatePositions < ActiveRecord::Migration
       t.text :body
       t.boolean :agree
       t.boolean :agree_with_proposal
-      t.float :response_percent_agreed
-      t.integer :response_count
 
       t.timestamps null: false
     end

@@ -8,5 +8,7 @@ class User < ActiveRecord::Base
   has_many :positions
 
   validates :name, presence: true
-  
+
+  default_scope -> {order(:name)}
+
 end

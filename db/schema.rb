@@ -24,10 +24,8 @@ ActiveRecord::Schema.define(version: 20151020162614) do
     t.text     "body"
     t.boolean  "agree"
     t.boolean  "agree_with_proposal"
-    t.float    "response_percent_agreed"
-    t.integer  "response_count"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   add_index "positions", ["parent_id"], name: "index_positions_on_parent_id"

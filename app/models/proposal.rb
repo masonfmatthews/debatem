@@ -11,6 +11,8 @@ class Proposal < ActiveRecord::Base
 
   delegate :name, to: :user, prefix: "user"
 
+  default_scope -> {order(created_at: :desc)}
+
   def percentage_agreement
     if positions.count > 0
       100.0 * positions.where(agree_with_proposal: true).count / positions.count

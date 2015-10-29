@@ -1,20 +1,39 @@
 <div class="right-link">
-  <%= link_to "Return to Proposal", @position.proposal %>
+  <% if @position.parent %>
+    <%= link_to "Return to Argument", [@position.proposal, @position.parent] %>
+  <% else %>
+    <%= link_to "Return to Proposal", @position.proposal %>
+  <% end %>
 </div>
 
 <h1>New Response</h1>
 
 <% if @position.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@position.errors.count, "error") %> prohibited this assignment from being saved:</h2>
-
+  <div class="alert alert-danger">
+    <p><%= pluralize(@position.errors.count, "error") %> prohibited this record from being saved:</p>
     <ul>
-    <% @position.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
+      <% @position.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
     </ul>
   </div>
 <% end %>
+
+<h3>
+  You are writing
+  <%= @position.agree ? '<span class="text-success">an Agreement</span>'.html_safe :
+        '<span class="text-danger">a Disagreement</span>'.html_safe %>
+  with:
+</h3>
+<div class="detail-box">
+  <h3>
+    <%= @position.subject.title %>
+  </h3>
+  <blockquote>
+    <p><%= @position.subject.body %></p>
+    <footer><%= @position.subject.user_name %></footer>
+  </blockquote>
+</div>
 
 <%= form_for [@position.proposal, @position] do |f| %>
   <%= f.hidden_field :proposal_id %>
