@@ -7,8 +7,12 @@
         <footer><%= proposal.user_name %></footer>
       </blockquote>
       <p>
-        <a class="wide-link text-success"><i class="glyphicon glyphicon-thumbs-up"></i> Write Agreement</a>
-        <a class="wide-link text-danger"><i class="glyphicon glyphicon-thumbs-down"></i> Write Disagreement</a>
+        <%= link_to '<i class="glyphicon glyphicon-thumbs-up"></i> Write Agreement'.html_safe,
+            new_proposal_position_path(proposal, agree: true),
+            class: "wide-link text-success" %>
+        <%= link_to '<i class="glyphicon glyphicon-thumbs-down"></i> Write Disagreement'.html_safe,
+            new_proposal_position_path(proposal, agree: false),
+            class: "wide-link text-danger" %>
         <%= link_to '<i class="glyphicon glyphicon-eye-open"></i> View Arguments'.html_safe, proposal, class: "wide-link" %>
       </p>
     </div>

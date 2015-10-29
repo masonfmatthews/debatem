@@ -4,7 +4,9 @@ class PositionsController < ApplicationController
   end
 
   def new
-    @position = Position.new
+    @position = Position.new(parent_id: params[:parent_id],
+        proposal_id: params[:proposal_id],
+        agree: params[:agree])
   end
 
   def create
@@ -17,6 +19,6 @@ class PositionsController < ApplicationController
   end
 
   private def position_params
-    params.require(:position).permit(:user_id, :proposal_id, :parent_id, :title, :body)
+    params.require(:position).permit(:user_id, :proposal_id, :parent_id, :title, :body, :agree)
   end
 end

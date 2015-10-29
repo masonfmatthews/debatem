@@ -20,11 +20,13 @@
     <div class="col-md-3 side">
       <div class="side-count">
         <div class="lead"><%= position.agreements.count %> agree</div>
-        <a>Write an Agreement</a>
+        <%= link_to 'Write Agreement',
+            new_proposal_position_path(position.proposal, agree: true, parent_id: position.id) %>
       </div>
       <div class="side-count">
         <div class="lead"><%= position.disagreements.count %> disagree</div>
-        <a>Write a Disagreement</a>
+        <%= link_to 'Write Disagreement',
+            new_proposal_position_path(position.proposal, agree: false, parent_id: position.id) %>
       </div>
     </div>
   </div>
