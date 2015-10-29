@@ -11,12 +11,23 @@ class Position < ActiveRecord::Base
 
   delegate :name, to: :user, prefix: "user"
 
+  before_save :set_proposal_agreement
+
   def agreements
     responses.where(agree: true)
   end
 
   def disagreements
     responses.where(agree: false)
+  end
+
+  private def set_proposal_agreement
+    if parent
+      self.agree_with_proposal = (agree == parent.agree_with_proposal)
+    else
+      self.agree_with_proposal = agree
+    end
+    true
   end
 
 end
