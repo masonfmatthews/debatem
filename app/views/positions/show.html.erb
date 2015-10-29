@@ -1,5 +1,9 @@
 <div class="right-link">
-  <%= link_to "Return to All Proposals", proposals_path %>
+  <% if @position.parent %>
+    <%= link_to "Go Up a Level", [@position.proposal, @position.parent] %>
+  <% else %>
+    <%= link_to "Go Back to this Proposal", @position.proposal %>
+  <% end %>
 </div>
 
 <h1>Sub-arguments</h1>
