@@ -31,12 +31,18 @@
     cursor: pointer;
   }
 
-  &.proposal-tree {
+  &.proposal-tree, &.position-tree {
     background-color: lightgrey;
   }
 
   &.position {
     cursor: pointer;
+    min-height: 175px;
+  }
+}
+
+.responses {
+  .position {
     margin-left: 40px;
   }
 }

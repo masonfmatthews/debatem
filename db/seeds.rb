@@ -9,7 +9,7 @@
 User.create!(name: "Admin", email: "admin@example.com", password: "password")
 
 users = []
-3.times do
+10.times do
   users << User.create!(name: Faker::Name.name,
       email: Faker::Internet.email,
       password: Faker::Internet.password)
@@ -24,7 +24,7 @@ prefixes = ["I think we should ", "This company needs to ", "It would be best to
 end
 
 positions = []
-500.times do |i|
+400.times do |i|
   parent = (i % 10 == 0 ? nil : positions.sample)
   parent_agree = (parent ? parent.agree_with_proposal : true)
   agree = [true, false].sample

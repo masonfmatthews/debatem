@@ -8,6 +8,8 @@
 
 <%= render partial: "proposal_tree" %>
 
-<% @proposal.positions.direct.each do |p| %>
-  <%= render p %>
-<% end %>
+<div class="responses">
+  <% @proposal.positions.direct.each do |p| %>
+    <%= render p %>
+  <% end %>
+</div>

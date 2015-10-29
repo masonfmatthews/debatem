@@ -16,17 +16,14 @@
         <p><%= position.body %></p>
         <footer><%= position.user_name %></footer>
       </blockquote>
-      <p>
-        <%= link_to '<i class="glyphicon glyphicon-eye-open"></i> View Sub-arguments'.html_safe, [position.proposal, position], class: "wide-link" %>
-      </p>
     </div>
     <div class="col-md-3 side">
       <div class="side-count">
-        <div class="lead">+<%= position.agreements.count %> agree</div>
+        <div class="lead"><%= position.agreements.count %> agree</div>
         <a>Write an Agreement</a>
       </div>
       <div class="side-count">
-        <div class="lead">-<%= position.disagreements.count %> disagree</div>
+        <div class="lead"><%= position.disagreements.count %> disagree</div>
         <a>Write a Disagreement</a>
       </div>
     </div>
