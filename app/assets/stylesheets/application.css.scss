@@ -20,6 +20,22 @@
   font-weight: 200;
   margin: 10px 0px;
   padding: 10px 20px;
+  position: relative; // Needed for fully-clickable region
+
+  a.overlay { // Needed for fully-clickable region
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  a.over-overlay { // Needed for links over fully-clickable region
+    position: relative;
+    z-index: 20;
+  }
+
   h3 {
     margin-top: 0px;
   }
@@ -28,7 +44,6 @@
   }
 
   &.proposal {
-    cursor: pointer;
   }
 
   &.proposal-tree, &.position-tree {

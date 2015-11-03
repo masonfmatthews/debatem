@@ -1,4 +1,5 @@
-<div class="detail-box proposal" onclick="location.href='<%= proposal_path(proposal) %>';">
+<div class="detail-box proposal">
+  <%= link_to "", proposal_path(proposal), class: "overlay" %>
   <div class="row">
     <div class="col-md-9">
       <h3><%= proposal.title %></h3>
@@ -9,11 +10,13 @@
       <p>
         <%= link_to '<i class="glyphicon glyphicon-thumbs-up"></i> Write Agreement'.html_safe,
             new_proposal_position_path(proposal, agree: true),
-            class: "wide-link text-success" %>
+            class: "wide-link text-success over-overlay" %>
         <%= link_to '<i class="glyphicon glyphicon-thumbs-down"></i> Write Disagreement'.html_safe,
             new_proposal_position_path(proposal, agree: false),
-            class: "wide-link text-danger" %>
-        <%= link_to '<i class="glyphicon glyphicon-eye-open"></i> View Arguments'.html_safe, proposal, class: "wide-link" %>
+            class: "wide-link text-danger over-overlay" %>
+        <%= link_to '<i class="glyphicon glyphicon-eye-open"></i> View Arguments'.html_safe,
+            proposal,
+            class: "wide-link over-overlay" %>
       </p>
     </div>
     <div class="col-md-3">

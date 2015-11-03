@@ -1,4 +1,5 @@
-<div class="detail-box position" onclick="location.href='<%= proposal_position_path(position.proposal, position) %>';">
+<div class="detail-box position">
+  <%= link_to "", proposal_position_path(position.proposal, position), class: "overlay" %>
   <div class="row">
     <div class="col-md-9">
       <% if position.agree %>
@@ -21,12 +22,14 @@
       <div class="side-count">
         <div class="lead"><%= position.agreements.count %> agree</div>
         <%= link_to 'Write Agreement',
-            new_proposal_position_path(position.proposal, agree: true, parent_id: position.id) %>
+            new_proposal_position_path(position.proposal, agree: true, parent_id: position.id),
+            class: "over-overlay" %>
       </div>
       <div class="side-count">
         <div class="lead"><%= position.disagreements.count %> disagree</div>
         <%= link_to 'Write Disagreement',
-            new_proposal_position_path(position.proposal, agree: false, parent_id: position.id) %>
+            new_proposal_position_path(position.proposal, agree: false, parent_id: position.id),
+            class: "over-overlay" %>
       </div>
     </div>
   </div>
