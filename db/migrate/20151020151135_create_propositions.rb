@@ -1,6 +1,6 @@
-class CreateProposals < ActiveRecord::Migration
+class CreatePropositions < ActiveRecord::Migration
   def change
-    create_table :proposals do |t|
+    create_table :propositions do |t|
       t.integer :user_id
       t.string :title
       t.text :body

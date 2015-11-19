@@ -16,23 +16,7 @@ ActiveRecord::Schema.define(version: 20151020162614) do
   create_table "indices", force: :cascade do |t|
   end
 
-  create_table "positions", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "proposal_id"
-    t.integer  "parent_id"
-    t.string   "title"
-    t.text     "body"
-    t.boolean  "agree"
-    t.boolean  "agree_with_proposal"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-  end
-
-  add_index "positions", ["parent_id"], name: "index_positions_on_parent_id"
-  add_index "positions", ["proposal_id"], name: "index_positions_on_proposal_id"
-  add_index "positions", ["user_id"], name: "index_positions_on_user_id"
-
-  create_table "proposals", force: :cascade do |t|
+  create_table "propositions", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"
     t.text     "body"
@@ -40,7 +24,7 @@ ActiveRecord::Schema.define(version: 20151020162614) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "proposals", ["user_id"], name: "index_proposals_on_user_id"
+  add_index "propositions", ["user_id"], name: "index_propositions_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

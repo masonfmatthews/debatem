@@ -1,0 +1,11 @@
+<div class="right-link">
+  <%= link_to "Add New Proposition", new_proposition_path %>
+</div>
+
+<h1>All Propositions</h1>
+
+<%= render @propositions %>
+
+<script>
+  var allPercentages = [<%= @propositions.map{|p| p.percentage_agreement.round}.join(", ") %>];
+</script>

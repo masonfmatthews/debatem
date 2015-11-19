@@ -15,26 +15,26 @@ users = []
       password: Faker::Internet.password)
 end
 
-proposals = []
+propositions = []
 prefixes = ["I think we should ", "This company needs to ", "It would be best to "]
 10.times do
-  proposals << Proposal.create!(user: users.sample,
+  propositions << Proposition.create!(user: users.sample,
       title: prefixes.sample + Faker::Company.bs,
       body: Faker::Lorem.paragraph)
 end
 
-positions = []
-400.times do |i|
-  parent = (i % 10 == 0 ? nil : positions.sample)
-  parent_agree = (parent ? parent.agree_with_proposal : true)
-  agree = [true, false].sample
-  agree_with_proposal = (agree ? parent_agree : !parent_agree)
-  proposal_id = (parent ? parent.proposal_id : proposals.sample.id)
-  positions << Position.create!(user: users.sample,
-      parent: parent,
-      proposal_id: proposal_id,
-      title: (agree ? "Right. " : "No. ") + Faker::Company.bs.capitalize,
-      body: Faker::Lorem.paragraph,
-      agree: agree,
-      agree_with_proposal: agree_with_proposal)
-end
+# positions = []
+# 400.times do |i|
+#   parent = (i % 10 == 0 ? nil : positions.sample)
+#   parent_agree = (parent ? parent.agree_with_proposition : true)
+#   agree = [true, false].sample
+#   agree_with_proposition = (agree ? parent_agree : !parent_agree)
+#   proposition_id = (parent ? parent.proposition_id : propositions.sample.id)
+#   positions << Position.create!(user: users.sample,
+#       parent: parent,
+#       proposition_id: proposition_id,
+#       title: (agree ? "Right. " : "No. ") + Faker::Company.bs.capitalize,
+#       body: Faker::Lorem.paragraph,
+#       agree: agree,
+#       agree_with_proposition: agree_with_proposition)
+# end

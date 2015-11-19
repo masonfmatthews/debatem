@@ -1,21 +1,21 @@
 <div class="right-link">
-  <%= link_to "Return to All Proposals", proposals_path %>
+  <%= link_to "Return to All Propositions", propositions_path %>
 </div>
 
-<h1>New Proposal</h1>
+<h1>New Proposition</h1>
 
-<% if @proposal.errors.any? %>
+<% if @proposition.errors.any? %>
   <div class="alert alert-danger">
-    <p><%= pluralize(@proposal.errors.count, "error") %> prohibited this record from being saved:</p>
+    <p><%= pluralize(@proposition.errors.count, "error") %> prohibited this record from being saved:</p>
     <ul>
-      <% @proposal.errors.full_messages.each do |message| %>
+      <% @proposition.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
   </div>
 <% end %>
 
-<%= form_for @proposal do |f| %>
+<%= form_for @proposition do |f| %>
   <div class="form-group">
     <%= f.label :user_id %>
     <%= f.collection_select :user_id, User.all, :id, :name, {}, class: "form-control" %>

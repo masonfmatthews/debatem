@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ProposalsControllerTest < ActionController::TestCase
+class PropositionsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
@@ -12,8 +12,8 @@ class ProposalsControllerTest < ActionController::TestCase
   end
 
   test "should post create" do
-    post :create, proposal: {user_id: users(:one).id, title: "Title", body: "Body"}
-    assert_redirected_to proposals_path
+    post :create, proposition: {user_id: users(:one).id, title: "Title", body: "Body"}
+    assert_redirected_to propositions_path
   end
 
 end

@@ -1,21 +1,21 @@
-<div class="detail-box proposal">
-  <%= link_to "", proposal_path(proposal), class: "overlay" %>
+<div class="detail-box proposition">
+  <%= link_to "", proposition_path(proposition), class: "overlay" %>
   <div class="row">
     <div class="col-md-9">
-      <h3><%= proposal.title %></h3>
+      <h3><%= proposition.title %></h3>
       <blockquote>
-        <p><%= proposal.body %></p>
-        <footer><%= proposal.user_name %></footer>
+        <p><%= proposition.body %></p>
+        <footer><%= proposition.user_name %></footer>
       </blockquote>
       <p>
         <%= link_to '<i class="glyphicon glyphicon-thumbs-up"></i> Write Agreement'.html_safe,
-            new_proposal_position_path(proposal, agree: true),
+            nil, # new_proposition_position_path(proposition, agree: true),
             class: "wide-link text-success over-overlay" %>
         <%= link_to '<i class="glyphicon glyphicon-thumbs-down"></i> Write Disagreement'.html_safe,
-            new_proposal_position_path(proposal, agree: false),
+            nil, # new_proposition_position_path(proposition, agree: false),
             class: "wide-link text-danger over-overlay" %>
         <%= link_to '<i class="glyphicon glyphicon-eye-open"></i> View Arguments'.html_safe,
-            proposal,
+            proposition,
             class: "wide-link over-overlay" %>
       </p>
     </div>

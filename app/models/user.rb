@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :rememberable, :trackable, and :omniauthable
   devise :database_authenticatable, :registerable, :validatable
 
-  has_many :proposals
+  has_many :propositions
   has_many :positions
 
   validates :name, presence: true

@@ -1,0 +1,19 @@
+<div class="right-link">
+  <%= link_to "Return to All Propositions", propositions_path %>
+</div>
+
+<h1>Proposition Arguments</h1>
+
+<%= render @proposition %>
+
+<script>
+  var allPercentages = [<%= @proposition.percentage_agreement.round %>];
+</script>
+
+<%= render partial: "proposition_tree" %>
+
+<div class="responses">
+  <% @proposition.positions.direct.each do |p| %>
+    <%= render p %>
+  <% end %>
+</div>
