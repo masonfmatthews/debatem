@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020162614) do
+ActiveRecord::Schema.define(version: 20151120142802) do
+
+  create_table "claims", force: :cascade do |t|
+    t.integer  "proposition_id"
+    t.text     "claim"
+    t.string   "data_url"
+    t.text     "warrant"
+    t.integer  "user_id"
+    t.boolean  "positive"
+    t.integer  "parent_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "indices", force: :cascade do |t|
   end

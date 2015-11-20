@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  proposition_id: 1
+  claim: MyText
+  data_url: MyString
+  warrant: MyText
+  user_id: 1
+  positive: false
+  parent_id: 1
+
+two:
+  proposition_id: 1
+  claim: MyText
+  data_url: MyString
+  warrant: MyText
+  user_id: 1
+  positive: false
+  parent_id: 1
