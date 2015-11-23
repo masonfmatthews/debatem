@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :validatable
 
   has_many :propositions
-  has_many :positions
+  has_many :claims
+  has_many :thumbs
 
   validates :name, presence: true
 
