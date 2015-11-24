@@ -23,18 +23,28 @@ prefixes = ["I think we should ", "This company needs to ", "It would be best to
       body: Faker::Lorem.paragraph)
 end
 
-# positions = []
-# 400.times do |i|
-#   parent = (i % 10 == 0 ? nil : positions.sample)
-#   parent_agree = (parent ? parent.agree_with_proposition : true)
-#   agree = [true, false].sample
-#   agree_with_proposition = (agree ? parent_agree : !parent_agree)
-#   proposition_id = (parent ? parent.proposition_id : propositions.sample.id)
-#   positions << Position.create!(user: users.sample,
-#       parent: parent,
-#       proposition_id: proposition_id,
-#       title: (agree ? "Right. " : "No. ") + Faker::Company.bs.capitalize,
-#       body: Faker::Lorem.paragraph,
-#       agree: agree,
-#       agree_with_proposition: agree_with_proposition)
-# end
+claims = []
+400.times do |i|
+  if i % 10 == 0
+    parent = nil
+    positive = true
+    proposition = propositions.sample
+  else
+    parent = claims.sample
+    positive = !parent.positive
+    proposition = parent.proposition
+  end
+  claims << Claim.create!(user: users.sample,
+      parent: parent,
+      proposition: proposition,
+      claim: "No. " + Faker::Company.bs.capitalize,
+      data_url: Faker::Internet.url,
+      warrant: Faker::Lorem.paragraph,
+      positive: positive)
+end
+
+1000.times do |i|
+  Thumb.create!(claim: claims.sample,
+      user: users.sample,
+      up: [true, false].sample)
+end
