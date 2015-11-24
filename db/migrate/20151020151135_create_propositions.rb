@@ -7,5 +7,8 @@ class CreatePropositions < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_index :propositions, :user_id
+    add_index :propositions, :created_at
   end
 end

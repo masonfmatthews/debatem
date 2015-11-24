@@ -11,5 +11,9 @@ class CreateClaims < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_index :claims, :user_id
+    add_index :claims, :proposition_id
+    add_index :claims, :parent_id
   end
 end

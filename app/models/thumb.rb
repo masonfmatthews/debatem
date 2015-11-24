@@ -4,5 +4,4 @@ class Thumb < ActiveRecord::Base
 
   validates :user, presence: true
   validates :claim, presence: true
-  validates :up, presence: true
 end

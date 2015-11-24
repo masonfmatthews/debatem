@@ -5,5 +5,5 @@ class Claim < ActiveRecord::Base
   belongs_to :parent, class_name: "Claim"
   has_many :children, class_name: "Claim", foreign_key: :parent_id
 
-  has_Many :thumbs
+  has_many :thumbs
 end

@@ -7,5 +7,7 @@ class CreateThumbs < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :thumbs, :user_id
+    add_index :thumbs, :claim_id
   end
 end
