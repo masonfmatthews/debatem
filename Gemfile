@@ -9,8 +9,8 @@ gem 'bootstrap-sass', '~> 3.3.5'
 
 gem 'uglifier', '>= 1.3.0'
 
-gem 'jquery-rails'
-gem 'd3-rails'
+gem 'jquery-rails', '~> 4.0.5'
+gem 'd3-rails', '~> 3.5.2'
 
 gem 'jbuilder', '~> 2.0'
 
