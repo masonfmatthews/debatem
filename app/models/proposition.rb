@@ -14,11 +14,10 @@ class Proposition < ActiveRecord::Base
   default_scope -> {order(created_at: :desc)}
 
   def percentage_agreement
-    50.0
-    # if positions.count > 0
-    #   100.0 * positions.where(agree_with_proposition: true).count / positions.count
-    # else
-    #   0
-    # end
+    if claims.count > 0
+      100.0 * claims.where(positive: true).count / claims.count
+    else
+      0
+    end
   end
 end
