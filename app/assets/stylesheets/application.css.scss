@@ -46,11 +46,11 @@
   &.proposition {
   }
 
-  &.proposition-tree, &.position-tree {
+  &.proposition-tree, &.claim-tree {
     background-color: lightgrey;
   }
 
-  &.position {
+  &.claim {
     cursor: pointer;
     min-height: 175px;
   }
