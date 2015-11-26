@@ -6,4 +6,6 @@ class Claim < ActiveRecord::Base
   has_many :children, class_name: "Claim", foreign_key: :parent_id
 
   has_many :thumbs
+
+  delegate :name, to: :user, prefix: "user"
 end

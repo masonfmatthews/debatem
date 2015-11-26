@@ -7,17 +7,6 @@
         <p><%= proposition.body %></p>
         <footer><%= proposition.user_name %></footer>
       </blockquote>
-      <p>
-        <%= link_to '<i class="glyphicon glyphicon-thumbs-up"></i> Write Agreement'.html_safe,
-            nil, #new_claim_path(parent: , positive: true),
-            class: "wide-link text-success over-overlay" %>
-        <%= link_to '<i class="glyphicon glyphicon-thumbs-down"></i> Write Disagreement'.html_safe,
-            nil, #new_claim_path(parent: , positive: false),
-            class: "wide-link text-danger over-overlay" %>
-        <%= link_to '<i class="glyphicon glyphicon-eye-open"></i> View Arguments'.html_safe,
-            proposition,
-            class: "wide-link over-overlay" %>
-      </p>
     </div>
     <div class="col-md-3">
       <svg class="half-donut"></svg>

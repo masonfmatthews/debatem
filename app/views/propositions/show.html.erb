@@ -13,7 +13,7 @@
 <%= render partial: "proposition_tree" %>
 
 <div class="responses">
-  <% @proposition.positions.direct.each do |p| %>
-    <%= render p %>
+  <% @proposition.claims.direct.each do |c| %>
+    <%= render c %>
   <% end %>
 </div>
