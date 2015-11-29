@@ -22,7 +22,8 @@ class Proposition < ActiveRecord::Base
 
   def percentage_agreement
     if claims.count > 0
-      thumb_count + 100.0 * claims.where(positive: true).count / claims.count
+      score = thumb_count + 100.0 * claims.where(positive: true).count / claims.count
+      [100, [0, score].max].min
     else
       0
     end
