@@ -8,6 +8,7 @@ class CreateClaims < ActiveRecord::Migration
       t.integer :user_id
       t.boolean :positive
       t.integer :parent_id
+      t.float :score_cache
 
       t.timestamps null: false
     end

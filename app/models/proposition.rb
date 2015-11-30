@@ -16,20 +16,7 @@ class Proposition < ActiveRecord::Base
   def percentage_agreement
     return 0 if claims.blank?
 
-    score = thumb_sum/thumb_count + 100.0 * claims.where(positive: true).count / claims.count
-    [100, [0, score].max].min
+    ((claims.reduce(0.0) {|sum, c| sum + c.score_cache} / claims.count) + 1) * 50
   end
 
-
-  private def all_thumbs
-    @all_thumbs ||= claims.joins(:thumbs).select("claims.positive AS positive, thumbs.up AS up")
-  end
-
-  private def thumb_sum
-    all_thumbs.reduce(0) {|sum, c| sum + (c.positive ? 1 : -1)*(c.up ? 1 : -1) }
-  end
-
-  private def thumb_count
-    all_thumbs.length
-  end
 end

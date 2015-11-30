@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20151123015351) do
     t.integer  "user_id"
     t.boolean  "positive"
     t.integer  "parent_id"
+    t.float    "score_cache"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

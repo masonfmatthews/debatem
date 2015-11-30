@@ -4,4 +4,10 @@ class Thumb < ActiveRecord::Base
 
   validates :user, presence: true
   validates :claim, presence: true
+
+  after_save :update_claim
+
+  private def update_claim
+    claim.save!
+  end
 end
