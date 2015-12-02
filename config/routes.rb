@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'mockups/propositions_index'
+
+  get 'mockups/propositions_show'
+
+  get 'mockups/claims_new'
+
+  get 'mockups/propositions_graph'
+
   devise_for :users
   root 'propositions#index'
 
