@@ -5,3 +5,4 @@ Debatem is a Rails application meant to allow groups of people to debate about d
 Possible uses:
 
 * Helping management make decisions in a way that is transparent to employees.
+* Training debate students.
