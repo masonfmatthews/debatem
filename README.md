@@ -6,3 +6,4 @@ Possible uses:
 
 * Helping management make decisions in a way that is transparent to employees.
 * Training debate students.
+* Communicating prior decision-making processes to new employees/members.
